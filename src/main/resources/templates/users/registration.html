@@ -7,13 +7,32 @@
 
 </header>
 <h2>Register here:</h2>
-<form method="post" th:object="${User}">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username">
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
-    <label for="fullname">Full Name:</label>
-    <input type="text" id="fullname" name="fullname">
+<form method="post" th:object="${User}" th:action="@{/users/registration}">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" th:field="${User.username}">
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" th:field="${User.password}">
+    </div>
+
+    <div>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" th:field="${User.profile.fullName}">
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email_address" th:field="${User.profile.emailAddress}">
+    </div>
+
+    <div>
+        <label for="mobile">Mobile Number:</label>
+        <input type="number" id="mobile" name="mobile_number" th:field="${User.profile.mobileNumber}">
+    </div>
+
     <input type="submit" value="Register">
 </form>
 </body>

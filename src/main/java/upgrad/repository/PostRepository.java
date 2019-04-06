@@ -2,6 +2,7 @@ package upgrad.repository;
 
 import org.springframework.stereotype.Repository;
 import upgrad.model.Post;
+import upgrad.model.User;
 
 import javax.persistence.*;
 import javax.transaction.Transaction;
@@ -78,4 +79,5 @@ public class PostRepository {
             transaction.rollback();
         }
     }
+    
 }
